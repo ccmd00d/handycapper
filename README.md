@@ -115,7 +115,8 @@ Yes - both MySQL and PostgreSQL have support out of the box, though to use them 
 
 Feedback, requests, bugs etc. can be sent to me via:
 
-<ul><li>
+<ul><li>robin.howlett <i>at</i> gmail.com</li>
+<!--
 <script type="text/javascript" language="javascript">
 <!--
 // Email obfuscator script 2.1 by Tim Williams, University of Arizona
@@ -140,6 +141,7 @@ document.write("<a href='mailto:"+link+"'>Email</a>")
 }
 //-->
 </script><noscript>Sorry, you need Javascript on to email me.</noscript>
+-->
 </li>
 <li>Twitter: <a href="https://www.twitter.com/robinhowlett">@robinhowlett</a></li>
 
