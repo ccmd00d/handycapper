@@ -54,11 +54,17 @@ And conduct research at a granular level with the full power of SQL:
 
 ## Quickstart
 
-1. Download either `Handycapper.app` (MacOS) or `Handycapper.exe` (Windows) from [Releases](https://github.com/robinhowlett/handycapper/releases) and start the application.
+1. Download either `Handycapper.app.zip` (MacOS) or `Handycapper-1.0.0.exe.zip` (Windows) from [Releases](https://github.com/robinhowlett/handycapper/releases), unzip, install and start the application.
 1. Load an Equibase PDF chart file (for either a single race or even a full raceday) e.g. [2017 Breeders' Cup Day 2](http://www.equibase.com/premium/eqbPDFChartPlus.cfm?RACE=A&BorP=P&TID=DMR&CTRY=USA&DT=11/04/2017&DAY=D&STYLE=EQB)
 1. Double-click on a row to open the race view:
 
 > Note: the MacOS `.app` has been signed with my Apple Developer certificate. The `.exe` is not signed and may prompt warnings from your Windows OS. **handycapper** does not require an external network or internet connection to function.
+
+## Technical documentation
+
+- Database: [https://github.com/robinhowlett/handycapper/blob/master/docs/database-schema.md]()
+- REST API: [https://github.com/robinhowlett/handycapper/blob/master/docs/rest-api.md]()
+- JSON API: [https://github.com/robinhowlett/handycapper/blob/master/docs/json-design.md]()
 	
 ## FAQ
 
