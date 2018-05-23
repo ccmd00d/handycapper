@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.robinhowlett.handycapper.controllers.DashboardController">
+  <tabs>
+    <Tab text="Main">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0">
+               <children>
+                  <VBox maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane minHeight="136.0" prefHeight="136.0">
+                           <children>
+                              <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <AnchorPane>
+                                       <children>
+                                          <Label alignment="CENTER" text="handycapper" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <font>
+                                                <Font size="29.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets top="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <Hyperlink fx:id="subscribeLink" layoutX="1081.0" layoutY="8.0" text="Subscribe to receive updates" AnchorPane.rightAnchor="9.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <HBox alignment="CENTER" maxHeight="-Infinity" spacing="30.0">
+                                       <children>
+                                          <Button fx:id="chartBtn" mnemonicParsing="false" onAction="#selectCharts" prefHeight="59.0" prefWidth="208.0" text="Load PDF Chart(s)..." wrapText="true" />
+                                          <Button fx:id="exportExcelBtn" mnemonicParsing="false" onAction="#exportSelectedToExcel" prefHeight="59.0" prefWidth="208.0" text="Export Selected to Excel" wrapText="true" />
+                                          <Button fx:id="sqlBtn" mnemonicParsing="false" onAction="#openConsole" prefHeight="59.0" prefWidth="208.0" text="Open SQL Console" wrapText="true" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <AnchorPane prefWidth="1280.0">
+                                       <children>
+                                          <HBox prefHeight="19.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <Label alignment="BOTTOM_LEFT" prefHeight="22.0" prefWidth="1204.0" text="Double-click to view the selected race">
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="1204.0" text="Recent Charts">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label alignment="BOTTOM_RIGHT" contentDisplay="CENTER" prefHeight="22.0" prefWidth="1204.0" text="Select multiple races with Shift+Click">
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="280.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <TableView fx:id="racesTable" prefHeight="573.0" prefWidth="1258.0" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                                       <columns>
+                                          <TableColumn fx:id="colDate" editable="false" prefWidth="98.0" text="Date" />
+                                          <TableColumn fx:id="colTrack" prefWidth="42.0" text="Track" />
+                                          <TableColumn fx:id="colNum" prefWidth="23.0" text="#" />
+                                          <TableColumn fx:id="colDist" prefWidth="86.0" text="Dist" />
+                                          <TableColumn fx:id="colSurf" minWidth="0.0" prefWidth="60.0" text="Surf" />
+                                          <TableColumn fx:id="colType" prefWidth="169.0" text="Type" />
+                                          <TableColumn fx:id="colName" prefWidth="215.0" text="Name" />
+                                          <TableColumn fx:id="colRnrs" prefWidth="41.0" text="Rnrs" />
+                                          <TableColumn fx:id="colTime" prefWidth="86.0" text="Final Time" />
+                                          <TableColumn fx:id="colWin" prefWidth="138.0" text="Winner" />
+                                          <TableColumn fx:id="colJock" prefWidth="138.0" text="Jockey" />
+                                          <TableColumn fx:id="colTrnr" prefWidth="138.0" text="Trainer" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Find Charts">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0">
+               <children>
+                  <VBox maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane minHeight="131.0" prefHeight="131.0" prefWidth="1280.0">
+                           <children>
+                              <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <GridPane hgap="10.0" prefHeight="130.0" prefWidth="1114.0" vgap="10.0" HBox.hgrow="ALWAYS">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="75.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="75.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="75.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Label layoutX="8.0" prefHeight="32.0" prefWidth="51.0" text="Track:" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                             <children>
+                                                <ComboBox fx:id="trackCombo" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label layoutX="8.0" prefHeight="32.0" prefWidth="51.0" text="Date:" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="32.0" prefWidth="121.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <children>
+                                                <DatePicker fx:id="datePicker" layoutX="3.0" layoutY="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                             <children>
+                                                <Label layoutX="8.0" prefHeight="32.0" prefWidth="65.0" text="Distance:" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane fx:id="qAnchorDist" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" />
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label layoutX="8.0" prefHeight="32.0" prefWidth="51.0" text="Sex:" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane fx:id="qAnchorSex" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label layoutX="8.0" prefHeight="32.0" prefWidth="51.0" text="Age:" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane fx:id="qAnchorAge" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                             <children>
+                                                <Label layoutX="8.0" prefHeight="32.0" prefWidth="62.0" text="Runners:" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane fx:id="qAnchorRnrs" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                             <children>
+                                                <Label layoutX="8.0" prefHeight="32.0" prefWidth="61.0" text="Surface:" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane fx:id="qAnchorSurf" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+                                             <children>
+                                                <Label layoutX="8.0" prefHeight="32.0" prefWidth="61.0" text="Type:" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane fx:id="qAnchorType" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="10.0" top="5.0" />
+                                       </HBox.margin>
+                                    </GridPane>
+                                    <VBox alignment="CENTER_RIGHT" minWidth="70.0" prefHeight="100.0" prefWidth="169.0">
+                                       <children>
+                                          <Button fx:id="findBtn" mnemonicParsing="false" onAction="#findRaces" prefHeight="60.0" prefWidth="170.0" text="Find">
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button fx:id="exportQueryBtn" mnemonicParsing="false" onAction="#exportQueryResultsToExcel" prefHeight="29.0" prefWidth="170.0" text="Export">
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" right="5.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button fx:id="resetBtn" mnemonicParsing="false" onAction="#resetAll" prefHeight="35.0" prefWidth="170.0" text="Reset">
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" right="5.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="280.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <TableView fx:id="queryTable" prefHeight="460.0" prefWidth="1258.0" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                                       <columns>
+                                          <TableColumn fx:id="colQueryDate" editable="false" prefWidth="98.0" text="Date" />
+                                          <TableColumn fx:id="colQueryTrack" prefWidth="42.0" text="Track" />
+                                          <TableColumn fx:id="colQueryNum" prefWidth="23.0" text="#" />
+                                          <TableColumn fx:id="colQueryDist" prefWidth="86.0" text="Dist" />
+                                          <TableColumn fx:id="colQuerySurf" minWidth="0.0" prefWidth="60.0" text="Surf" />
+                                          <TableColumn fx:id="colQueryType" prefWidth="169.0" text="Type" />
+                                          <TableColumn fx:id="colQueryName" prefWidth="215.0" text="Name" />
+                                          <TableColumn fx:id="colQueryRnrs" prefWidth="41.0" text="Rnrs" />
+                                          <TableColumn fx:id="colQueryTime" prefWidth="86.0" text="Final Time" />
+                                          <TableColumn fx:id="colQueryWin" prefWidth="138.0" text="Winner" />
+                                          <TableColumn fx:id="colQueryJock" prefWidth="138.0" text="Jockey" />
+                                          <TableColumn fx:id="colQueryTrnr" prefWidth="138.0" text="Trainer" />
+                                       </columns>
+                                       <GridPane.margin>
+                                          <Insets top="5.0" />
+                                       </GridPane.margin>
+                                    </TableView>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </content>
+    </Tab>
+  </tabs>
+</TabPane>

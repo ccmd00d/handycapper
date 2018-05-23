@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.robinhowlett.handycapper.controllers.ResultController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox prefHeight="797.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="70.0" prefWidth="200.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox minWidth="275.0" prefHeight="70.0" prefWidth="376.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Hyperlink fx:id="raceInfo" layoutX="5.0" prefHeight="23.0" prefWidth="386.0" text="YYYY-MM-DD - TRACK NAME - Race #" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="0.0">
+                                             <font>
+                                                <Font name="Arial Bold" size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Hyperlink>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Label id="dateTrackNumber" fx:id="condsSummary" text="Age (Sex) [State] TYPE ##.#K (CONDS)" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Label id="dateTrackNumber" fx:id="raceDist" text="Dist (Course - Conditions)" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                              <AnchorPane prefHeight="70.0" prefWidth="760.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <TextArea fx:id="condsArea" prefHeight="70.0" prefWidth="510.0" stylesheets="@basic.css" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <padding>
+                                          <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+                                       </padding>
+                                    </TextArea>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="70.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Button fx:id="excelBtn" alignment="CENTER" contentDisplay="CENTER" layoutY="20.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#generateExcel" prefHeight="30.0" prefWidth="80.0" text="Excel" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="730.0" prefWidth="1280.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <TabPane prefHeight="726.0" prefWidth="1274.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <tabs>
+                            <Tab text="Result">
+                                 <content>
+                                    <AnchorPane maxHeight="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox prefHeight="850.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <AnchorPane maxHeight="1.7976931348623157E308" prefHeight="568.0" prefWidth="1274.0">
+                                                   <children>
+                                                      <GridPane maxHeight="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <TableView fx:id="perfTable" maxHeight="1.7976931348623157E308" prefWidth="1280.0" GridPane.vgrow="ALWAYS">
+                                                              <columns>
+                                                                  <TableColumn fx:id="colPos" minWidth="0.0" prefWidth="46.0" text="Pos" />
+                                                                <TableColumn fx:id="colPgm" minWidth="0.0" prefWidth="48.0" text="Pgm" />
+                                                                  <TableColumn fx:id="colHorse" prefWidth="162.0" text="Horse" />
+                                                                  <TableColumn fx:id="colWgt" minWidth="0.0" prefWidth="49.0" text="Wgt" />
+                                                                  <TableColumn fx:id="colME" minWidth="0.0" prefWidth="49.0" text="M/E" />
+                                                                  <TableColumn fx:id="colPp" minWidth="0.0" prefWidth="49.0" text="PP" />
+                                                                  <TableColumn fx:id="colJockey" minWidth="8.0" prefWidth="165.0" text="Jockey" />
+                                                                  <TableColumn fx:id="colTrainer" minWidth="0.0" prefWidth="160.0" text="Trainer" />
+                                                                  <TableColumn fx:id="colOdds" minWidth="0.0" prefWidth="61.0" text="Odds" />
+                                                                  <TableColumn fx:id="colChoice" minWidth="0.0" prefWidth="60.0" text="Choice" />
+                                                                  <TableColumn fx:id="colAhead" minWidth="0.0" prefWidth="76.0" text="Ahead" />
+                                                                  <TableColumn fx:id="colBehind" minWidth="0.0" prefWidth="73.0" text="Behind" />
+                                                                <TableColumn id="lastRaced" fx:id="colLastRaced" prefWidth="190.0" text="Last Raced" />
+                                                                  <TableColumn fx:id="colPrice" minWidth="0.0" prefWidth="72.0" text="Price" />
+                                                                  <TableColumn fx:id="colClaimed" minWidth="0.0" prefWidth="76.0" text="Claimed" />
+                                                              </columns>
+                                                            </TableView>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="120.0" prefWidth="1280.0" VBox.vgrow="SOMETIMES">
+                                                   <children>
+                                                      <TextArea fx:id="footnotes" editable="false" maxHeight="1.7976931348623157E308" prefWidth="1264.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </AnchorPane>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                            </Tab>
+                              <Tab text="Times">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <GridPane maxHeight="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <TableView fx:id="timesTable" maxHeight="1.7976931348623157E308" prefHeight="559.0" prefWidth="1264.0" GridPane.vgrow="ALWAYS">
+                                                   <columns>
+                                                      <TableColumn fx:id="colTimesDist" prefWidth="88.0" text="Dist" />
+                                                      <TableColumn fx:id="colTimesTime" prefWidth="95.0" text="Time" />
+                                                      <TableColumn fx:id="colTimesSplit" prefWidth="85.0" text="Split" />
+                                                      <TableColumn fx:id="colTimesMph" prefWidth="92.0" text="MPH" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Calls">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <TableView fx:id="callsTable" prefHeight="559.0" prefWidth="1264.0" GridPane.vgrow="ALWAYS" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                            <Tab text="Fractions">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <TableView fx:id="fractionsTable" prefHeight="559.0" prefWidth="1264.0" GridPane.vgrow="ALWAYS" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="Splits">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <TableView fx:id="splitsTable" prefHeight="559.0" prefWidth="1264.0" GridPane.vgrow="ALWAYS" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Wagering">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <AnchorPane prefHeight="235.0" prefWidth="1280.0">
+                                                   <children>
+                                                      <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <children>
+                                                            <TableView fx:id="wpsTable" prefHeight="232.0" prefWidth="1264.0">
+                                                               <columns>
+                                                                  <TableColumn fx:id="colWpsUnit" prefWidth="54.0" text="Unit" />
+                                                                  <TableColumn fx:id="colWpsType" prefWidth="148.0" text="Type" />
+                                                                  <TableColumn fx:id="colWpsPgm" minWidth="0.0" prefWidth="49.0" text="Pgm" />
+                                                                  <TableColumn fx:id="colWpsHorse" prefWidth="181.0" text="Horse" />
+                                                                  <TableColumn fx:id="colWpsPayoff" prefWidth="90.0" text="Payoff" />
+                                                                  <TableColumn fx:id="colWpsOdds" prefWidth="90.0" text="Odds" />
+                                                               </columns>
+                                                            </TableView>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </VBox.margin>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="483.0" prefWidth="1280.0">
+                                                   <children>
+                                                      <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <children>
+                                                            <TableView fx:id="exoticsTable" prefHeight="450.0" prefWidth="1264.0" GridPane.vgrow="ALWAYS">
+                                                               <columns>
+                                                                  <TableColumn fx:id="colExUnit" prefWidth="55.0" text="Unit" />
+                                                                  <TableColumn fx:id="colExType" prefWidth="147.0" text="Type" />
+                                                                  <TableColumn fx:id="colExNums" prefWidth="187.0" text="Winning Numbers" />
+                                                                  <TableColumn fx:id="colExCorrect" prefWidth="44.0" text="#" />
+                                                                  <TableColumn fx:id="colExPayoff" minWidth="0.0" prefWidth="90.0" text="Payoff" />
+                                                                  <TableColumn fx:id="colExOdds" prefWidth="90.0" text="Odds" />
+                                                                  <TableColumn fx:id="colExPool" prefWidth="117.0" text="Pool" />
+                                                                  <TableColumn fx:id="colExCarry" prefWidth="147.0" text="Carryover" />
+                                                               </columns>
+                                                            </TableView>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

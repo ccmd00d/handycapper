@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS `handycapper` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `handycapper`;
