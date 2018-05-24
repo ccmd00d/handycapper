@@ -28,6 +28,8 @@ The following default settings will provide access to the file-based H2 database
 
 `RACES` and `STARTERS` are the primary tables.
 
+> The [JSON API design](../json-design.md) document can aid understanding the purpose of many of the columns above.
+
 ## Sample queries
 
 Coming soon! 
