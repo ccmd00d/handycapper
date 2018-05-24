@@ -62,9 +62,9 @@ And conduct research at a granular level with the full power of SQL:
 
 ## Technical documentation
 
-- Database: [https://github.com/robinhowlett/handycapper/blob/master/docs/database-schema.md]()
-- REST API: [https://github.com/robinhowlett/handycapper/blob/master/docs/rest-api.md]()
-- JSON API: [https://github.com/robinhowlett/handycapper/blob/master/docs/json-design.md]()
+- [Database (include schema)](https://github.com/robinhowlett/handycapper/blob/master/docs/database-schema.md)
+- [REST API endpoints](https://github.com/robinhowlett/handycapper/blob/master/docs/rest-api.md)
+- [JSON API design](https://github.com/robinhowlett/handycapper/blob/master/docs/json-design.md)
 	
 ## FAQ
 
