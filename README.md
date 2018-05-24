@@ -109,7 +109,7 @@ And conduct research at a granular level with the full power of SQL:
 	
 * **Can I use a different database engine?**
 
-Yes - both MySQL and PostgreSQL have support out of the box, though to use them you must build from source via Maven and the `mysql` and `postgresql` Maven Profiles declared in the pom.xml file respectively. Usernames and password configuration in `application-mysql.properties` and `application-postgresql.properties` will need to be modified. The default Maven and Spring profile is `h2`.
+	Yes - both MySQL and PostgreSQL have support out of the box, though to use them you must build from source via Maven and the `mysql` and `postgresql` Maven Profiles declared in the pom.xml file respectively. Usernames and password configuration in `application-mysql.properties` and `application-postgresql.properties` will need to be modified. The default Maven and Spring profile is `h2`.
 	
 * **Should I use this for handicapping and wagering decisions?**
 
