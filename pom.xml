@@ -6,7 +6,7 @@
 
     <groupId>com.robinhowlett</groupId>
     <artifactId>handycapper</artifactId>
-    <version>1.0.0.RELEASE</version>
+    <version>1.0.1.RELEASE</version>
     <packaging>jar</packaging>
 
     <name>handycapper</name>
